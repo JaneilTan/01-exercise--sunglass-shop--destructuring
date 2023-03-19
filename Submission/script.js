@@ -4,23 +4,23 @@ import products from "./products.js";
 
 /**
  *
- * @param {object} product - contains information for a single producy
+ * @param {object} product - contains information for a single product
  * @returns DOM element
  */
-const getProductEl = (product) => {
+const getProductEl = ({ images, name, description }) => {
   const productEl = document.createElement("li");
   productEl.classList.add("product-grid-item");
 
   const imgEl = document.createElement("img");
-  imgEl.setAttribute("src", product.images[0]);
+  imgEl.setAttribute("src", images[0]);
   productEl.appendChild(imgEl);
 
   const titleEl = document.createElement("h3");
-  titleEl.innerText = product.name;
+  titleEl.innerText = name;
   productEl.appendChild(titleEl);
 
   const descEl = document.createElement("p");
-  descEl.innerText = product.description;
+  descEl.innerText = description;
   productEl.appendChild(descEl);
 
   const btnEl = document.createElement("button");
